@@ -49,7 +49,7 @@
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-md-6 col-lg-4">
                 <div class="form-container p-4">
-                    <h2 class="text-center form-title mb-4">ФОРМА</h2>
+                    <h2 class="text-center form-title mb-4">{{ config('app.name') }}</h2>
                     
                     <form id="contactForm">
                                                 
