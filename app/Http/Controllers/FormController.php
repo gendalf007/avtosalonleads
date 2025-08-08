@@ -55,20 +55,20 @@ class FormController extends Controller
             'comment' => $request->comment
         ]);
 
-        if($data){
-            $response = Http::withHeaders([
-                'Authorization' => config('app.crm_api_key'),
-                'Content-Type' => 'application/json'
-            ])->post(config('app.crm_api_url'), [
-                "phone" => $phone,
-                "name_first" => $request->name,
-                "name_last" => "",
-                "name_middle" => "",
-                "source_id" => $data->id,
-                "entry_point" => config('app.crm_api_entry_point'),
-                "comment" => $request->comment
-            ]);
-        }
+        // if($data){
+        //     $response = Http::withHeaders([
+        //         'Authorization' => config('app.crm_api_key'),
+        //         'Content-Type' => 'application/json'
+        //     ])->post(config('app.crm_api_url'), [
+        //         "phone" => $phone,
+        //         "name_first" => $request->name,
+        //         "name_last" => "",
+        //         "name_middle" => "",
+        //         "source_id" => $data->id,
+        //         "entry_point" => config('app.crm_api_entry_point'),
+        //         "comment" => $request->comment
+        //     ]);
+        // }
 
         if ($request->ajax()) {
             return response()->json(['success' => true, 'message' => 'Форма успешно отправлена']);
